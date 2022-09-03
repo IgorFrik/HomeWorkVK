@@ -1,0 +1,6 @@
+framework module Pods_HomeWorkVK {
+  umbrella header "Pods-HomeWorkVK-umbrella.h"
+
+  export *
+  module * { export * }
+}

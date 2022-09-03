@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import VK_ios_sdk
 
 class ViewController: UIViewController {
 
@@ -14,6 +15,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func authorize(_ sender: Any) {
+        VKSdk.authorize(["email"])
+    }
+    
 }
 

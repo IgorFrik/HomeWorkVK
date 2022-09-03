@@ -2,6 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>CFBundleURLTypes</key> <array> <dict> <key>CFBundleURLSchemes</key> <array>
+        <string>vk51417093</string> </array> </dict> </array> <key>VKAppID</key>
+        <string>51417093</string>
+        <key>NSAppTransportSecurity</key>
+        <dict>
+            <key>NSExceptionDomains</key>
+            <dict>
+                <key>vk.com</key>
+                <dict>
+                    <key>NSExceptionRequiresForwardSecrecy</key>
+                    <false/>
+                    <key>NSIncludesSubdomains</key>
+                    <true/>
+                    <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                    <true/>
+                </dict>
+            </dict>
+        </dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

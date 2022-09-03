@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F697CA52E4E18B0160C5C0E /* Pods_HomeWorkVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2850310824092E74891AD1E0 /* Pods_HomeWorkVK.framework */; };
 		786BC03328C114000015B878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BC03228C114000015B878 /* AppDelegate.swift */; };
 		786BC03528C114000015B878 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BC03428C114000015B878 /* SceneDelegate.swift */; };
 		786BC03728C114000015B878 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BC03628C114000015B878 /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2850310824092E74891AD1E0 /* Pods_HomeWorkVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeWorkVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A127F340B95C3273A55CFE /* Pods-HomeWorkVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWorkVK.release.xcconfig"; path = "Target Support Files/Pods-HomeWorkVK/Pods-HomeWorkVK.release.xcconfig"; sourceTree = "<group>"; };
 		786BC02F28C114000015B878 /* HomeWorkVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWorkVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		786BC03228C114000015B878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		786BC03428C114000015B878 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		786BC03B28C114050015B878 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		786BC03E28C114050015B878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		786BC04028C114050015B878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9BB0C5521C68B5797BD3C47 /* Pods-HomeWorkVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWorkVK.debug.xcconfig"; path = "Target Support Files/Pods-HomeWorkVK/Pods-HomeWorkVK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F697CA52E4E18B0160C5C0E /* Pods_HomeWorkVK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				786BC03128C114000015B878 /* HomeWorkVK */,
 				786BC03028C114000015B878 /* Products */,
+				7A2B029CBB844141CCC4F1E7 /* Pods */,
+				E5EA5660F7009F687B1D6B4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = HomeWorkVK;
 			sourceTree = "<group>";
 		};
+		7A2B029CBB844141CCC4F1E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B9BB0C5521C68B5797BD3C47 /* Pods-HomeWorkVK.debug.xcconfig */,
+				34A127F340B95C3273A55CFE /* Pods-HomeWorkVK.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E5EA5660F7009F687B1D6B4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2850310824092E74891AD1E0 /* Pods_HomeWorkVK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 786BC04328C114050015B878 /* Build configuration list for PBXNativeTarget "HomeWorkVK" */;
 			buildPhases = (
+				8E2457241BC84742138F3D6C /* [CP] Check Pods Manifest.lock */,
 				786BC02B28C113FF0015B878 /* Sources */,
 				786BC02C28C113FF0015B878 /* Frameworks */,
 				786BC02D28C113FF0015B878 /* Resources */,
+				B7D16AED65E23B3BC683726F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E2457241BC84742138F3D6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HomeWorkVK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7D16AED65E23B3BC683726F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeWorkVK/Pods-HomeWorkVK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeWorkVK/Pods-HomeWorkVK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HomeWorkVK/Pods-HomeWorkVK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		786BC02B28C113FF0015B878 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		786BC04428C114050015B878 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9BB0C5521C68B5797BD3C47 /* Pods-HomeWorkVK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		786BC04528C114050015B878 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34A127F340B95C3273A55CFE /* Pods-HomeWorkVK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
