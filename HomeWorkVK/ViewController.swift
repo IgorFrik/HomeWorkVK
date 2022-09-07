@@ -17,6 +17,11 @@ class ViewController: UIViewController {
 
     @IBAction func authorize(_ sender: Any) {
         VKSdk.authorize(["email"])
+        
+        let shareDialog = VKShareDialogController.init()
+        shareDialog.text = "Test"
+        
+        self.present(shareDialog, animated: true)
     }
 }
 
