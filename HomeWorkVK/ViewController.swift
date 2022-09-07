@@ -18,6 +18,5 @@ class ViewController: UIViewController {
     @IBAction func authorize(_ sender: Any) {
         VKSdk.authorize(["email"])
     }
-    
 }
 
