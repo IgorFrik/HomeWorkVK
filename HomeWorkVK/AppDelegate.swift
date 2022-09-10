@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        VKSdk.initialize(withAppId: "51417093")?.uiDelegate = self
+//        VKSdk.initialize(withAppId: "51417093")?.uiDelegate = self
         return true
     }
 
@@ -32,25 +32,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 }
-
-extension AppDelegate: VKSdkUIDelegate {
-    func vkSdkShouldPresent(_ controller: UIViewController!) {
-        let vc = UIApplication.shared.keyWindow?.rootViewController
-        if vc?.presentedViewController != nil {
-            vc?.dismiss(animated: true, completion: {
-                print("1")
-                vc?.present(controller, animated: true, completion: {
-                    print("2")
-                })
-            })
-        } else {
-            vc?.present(controller, animated: true, completion: {
-                print("3")
-            })
-        }
-    }
-
-    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {
-        print("vkSDKNeedCaptchaEnter")
-    }
-}
+//
+//extension AppDelegate: VKSdkUIDelegate {
+//    func vkSdkShouldPresent(_ controller: UIViewController!) {
+//        let vc = UIApplication.shared.keyWindow?.rootViewController
+//        if vc?.presentedViewController != nil {
+//            vc?.dismiss(animated: true, completion: {
+//                print("1")
+//                vc?.present(controller, animated: true, completion: {
+//                    print("2")
+//                })
+//            })
+//        } else {
+//            vc?.present(controller, animated: true, completion: {
+//                print("3")
+//            })
+//        }
+//    }
+//
+//    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {
+//        print("vkSDKNeedCaptchaEnter")
+//    }
+//}

@@ -9,19 +9,55 @@ import UIKit
 import VK_ios_sdk
 
 class ViewController: UIViewController {
+    var auth = false
+    var user = VKNetworking()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let sdkInstance = VKSdk.initialize(withAppId: self.user.kVK_APP_ID)
+        sdkInstance?.register(self)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        if auth {
+            showApp()
+        }
     }
 
     @IBAction func authorize(_ sender: Any) {
-        VKSdk.authorize(["email"])
-        
-        let shareDialog = VKShareDialogController.init()
-        shareDialog.text = "Test"
-        
-        self.present(shareDialog, animated: true)
+        VKSdk.wakeUpSession(["email"], complete: { [self] (state, error) in
+            if state == .authorized && error == nil && VKSdk.accessToken() != nil {
+                print("Авторизация уже есть")
+                self.user.userToken = VKSdk.accessToken().accessToken
+                self.auth = true
+                self.showApp()
+            } else {
+                VKSdk.authorize(["email"])
+                print("Нужна авторизация")
+            }
+        })
     }
 }
 
+extension ViewController: VKSdkDelegate {
+    func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
+        if result.token != nil && result.error == nil {
+            self.user.userToken = result.token.accessToken
+            self.auth = true
+            print("Вход выполнен")
+        } else {
+            print("Ошибка: \(String(describing: result.error))")
+        }
+    }
+    
+    func showApp() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerApp") as! ViewController
+        present(newVC, animated: true, completion: nil)
+//        newVC.userToken = self.user.userToken
+    }
+    
+    func vkSdkUserAuthorizationFailed() {
+        print("vkSDKUserAuthorizationFaled")
+    }
+}
