@@ -41,7 +41,7 @@ class ViewController: UIViewController {
 //                self.showApp()
             } else {
                 VKSdk.authorize(["email"])
-//                shareVK()
+                shareVK()
                 print("Нужна авторизация")
             }
         })
@@ -59,12 +59,12 @@ extension ViewController: VKSdkDelegate {
         }
     }
     
-    func showApp() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let newVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerApp") as! ViewControllerApp
-        present(newVC, animated: true, completion: nil)
-        newVC.userToken = self.user.userToken
-    }
+//    func showApp() {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let newVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerApp") as! ViewControllerApp
+//        present(newVC, animated: true, completion: nil)
+//        newVC.userToken = self.user.userToken
+//    }
     
     func vkSdkUserAuthorizationFailed() {
         print("vkSDKUserAuthorizationFaled")
