@@ -13,7 +13,7 @@ class VKNetworking {
     static let shared = VKNetworking()
     let kVK_APP_ID = "51417093"
     let permissions = NSArray(objects: "email", "wall", "photos") as [AnyObject]
-    var userToken = ""
+    var userToken = "vvv"
     var userEmail = String()
     
     func vkLogin(comletion: @escaping (Bool) -> ()) {

@@ -17,11 +17,18 @@ class ViewController: UIViewController {
         let sdkInstance = VKSdk.initialize(withAppId: self.user.kVK_APP_ID)
         sdkInstance?.register(self)
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         if auth {
             showApp()
         }
+    }
+    
+    func shareVK() {
+        let share = VKShareDialogController()
+        share.text = "Hello VK"
+        self.present(share, animated: true, completion: nil)
     }
 
     @IBAction func authorize(_ sender: Any) {
@@ -30,9 +37,11 @@ class ViewController: UIViewController {
                 print("Авторизация уже есть")
                 self.user.userToken = VKSdk.accessToken().accessToken
                 self.auth = true
-                self.showApp()
+                shareVK()
+//                self.showApp()
             } else {
                 VKSdk.authorize(["email"])
+//                shareVK()
                 print("Нужна авторизация")
             }
         })
@@ -52,9 +61,9 @@ extension ViewController: VKSdkDelegate {
     
     func showApp() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let newVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerApp") as! ViewController
+        let newVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerApp") as! ViewControllerApp
         present(newVC, animated: true, completion: nil)
-//        newVC.userToken = self.user.userToken
+        newVC.userToken = self.user.userToken
     }
     
     func vkSdkUserAuthorizationFailed() {
