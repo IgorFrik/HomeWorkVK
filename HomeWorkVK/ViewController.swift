@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         if auth {
-            showApp()
+//            showApp()
         }
     }
     
