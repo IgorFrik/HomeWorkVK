@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//        VKSdk.initialize(withAppId: "51417093")?.uiDelegate = self
         return true
     }
 
@@ -31,3 +32,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
+
+//extension AppDelegate: VKSdkDelegate, VKSdkUIDelegate {
+//
+//    func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
+//        print("vkSdkAccessAuthorizationFinished")
+//    }
+//
+//    func vkSdkUserAuthorizationFailed() {
+//        print("vkSdkUserAuthorizationFailed")
+//    }
+//
+//    func vkSdkShouldPresent(_ controller: UIViewController!) {
+//        print("vkSdkShouldPresent")
+//        let vc = UIApplication.shared.keyWindow?.rootViewController
+//        vc?.present(controller, animated: true, completion: nil)
+//    }
+//
+//    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {
+//        print("vkSdkShouldPresent")
+//    }
+//}

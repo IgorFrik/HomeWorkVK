@@ -9,6 +9,7 @@ import UIKit
 import VK_ios_sdk
 
 class ViewController: UIViewController {
+
     var auth = false
     var user = VKNetworking()
 
@@ -16,10 +17,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let sdkInstance = VKSdk.initialize(withAppId: self.user.kVK_APP_ID)
         sdkInstance?.register(self)
+        sdkInstance?.uiDelegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+        super.viewDidAppear(animated)
         if auth {
 //            showApp()
         }
@@ -41,14 +43,30 @@ class ViewController: UIViewController {
 //                self.showApp()
             } else {
                 VKSdk.authorize(["email"])
-                shareVK()
+//                shareVK()
                 print("Нужна авторизация")
             }
         })
     }
 }
 
-extension ViewController: VKSdkDelegate {
+extension ViewController: VKSdkDelegate, VKSdkUIDelegate {
+    func vkSdkShouldPresent(_ controller: UIViewController!) {
+        print("vkSdkShouldPresent")
+        let vc = UIApplication.shared.keyWindow?.rootViewController
+        if vc?.presentedViewController != nil {
+            vc?.dismiss(animated: true, completion: {
+                vc?.present(controller, animated: true, completion: nil)
+            })
+        } else {
+            vc?.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {
+        
+    }
+    
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
         if result.token != nil && result.error == nil {
             self.user.userToken = result.token.accessToken
