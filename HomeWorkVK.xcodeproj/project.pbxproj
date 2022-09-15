@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5F697CA52E4E18B0160C5C0E /* Pods_HomeWorkVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2850310824092E74891AD1E0 /* Pods_HomeWorkVK.framework */; };
-		7851D8A428CCF21E0021606C /* VKNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851D8A328CCF21E0021606C /* VKNetworking.swift */; };
 		7851D8A628CCFC8E0021606C /* ViewControllerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851D8A528CCFC8E0021606C /* ViewControllerApp.swift */; };
 		786BC03328C114000015B878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BC03228C114000015B878 /* AppDelegate.swift */; };
 		786BC03528C114000015B878 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BC03428C114000015B878 /* SceneDelegate.swift */; };
@@ -16,12 +15,12 @@
 		786BC03A28C114000015B878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 786BC03828C114000015B878 /* Main.storyboard */; };
 		786BC03C28C114050015B878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786BC03B28C114050015B878 /* Assets.xcassets */; };
 		786BC03F28C114050015B878 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 786BC03D28C114050015B878 /* LaunchScreen.storyboard */; };
+		78933D5E28D3867800625C99 /* UserVK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78933D5D28D3867800625C99 /* UserVK.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2850310824092E74891AD1E0 /* Pods_HomeWorkVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeWorkVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A127F340B95C3273A55CFE /* Pods-HomeWorkVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWorkVK.release.xcconfig"; path = "Target Support Files/Pods-HomeWorkVK/Pods-HomeWorkVK.release.xcconfig"; sourceTree = "<group>"; };
-		7851D8A328CCF21E0021606C /* VKNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKNetworking.swift; sourceTree = "<group>"; };
 		7851D8A528CCFC8E0021606C /* ViewControllerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerApp.swift; sourceTree = "<group>"; };
 		786BC02F28C114000015B878 /* HomeWorkVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWorkVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		786BC03228C114000015B878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +30,7 @@
 		786BC03B28C114050015B878 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		786BC03E28C114050015B878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		786BC04028C114050015B878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78933D5D28D3867800625C99 /* UserVK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVK.swift; sourceTree = "<group>"; };
 		B9BB0C5521C68B5797BD3C47 /* Pods-HomeWorkVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWorkVK.debug.xcconfig"; path = "Target Support Files/Pods-HomeWorkVK/Pods-HomeWorkVK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +71,7 @@
 				786BC03428C114000015B878 /* SceneDelegate.swift */,
 				786BC03628C114000015B878 /* ViewController.swift */,
 				7851D8A528CCFC8E0021606C /* ViewControllerApp.swift */,
-				7851D8A328CCF21E0021606C /* VKNetworking.swift */,
+				78933D5D28D3867800625C99 /* UserVK.swift */,
 				786BC03828C114000015B878 /* Main.storyboard */,
 				786BC03B28C114050015B878 /* Assets.xcassets */,
 				786BC03D28C114050015B878 /* LaunchScreen.storyboard */,
@@ -213,9 +213,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				786BC03728C114000015B878 /* ViewController.swift in Sources */,
+				78933D5E28D3867800625C99 /* UserVK.swift in Sources */,
 				7851D8A628CCFC8E0021606C /* ViewControllerApp.swift in Sources */,
 				786BC03328C114000015B878 /* AppDelegate.swift in Sources */,
-				7851D8A428CCF21E0021606C /* VKNetworking.swift in Sources */,
 				786BC03528C114000015B878 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

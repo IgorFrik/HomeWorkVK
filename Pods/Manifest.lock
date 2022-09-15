@@ -1,20 +1,16 @@
 PODS:
-  - Alamofire (5.6.2)
   - VK-ios-sdk (1.6.2)
 
 DEPENDENCIES:
-  - Alamofire
   - VK-ios-sdk
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - VK-ios-sdk
 
 SPEC CHECKSUMS:
-  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   VK-ios-sdk: 5bcf00a2014a7323f98db9328b603d4f96635caa
 
-PODFILE CHECKSUM: 4822271953be83aeabb71a4f727470dbf29a3de0
+PODFILE CHECKSUM: 801dd9b4c43504f8182b78e2503a4455f0a03d77
 
 COCOAPODS: 1.11.3

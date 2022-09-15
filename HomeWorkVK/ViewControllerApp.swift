@@ -6,14 +6,24 @@
 //
 
 import UIKit
+import VK_ios_sdk
 
 class ViewControllerApp: UIViewController {
+
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//    }
     
-    var userToken = ""
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    func shareVK() {
+        let share = VKShareDialogController()
+        share.text = "Test VK"
+        self.present(share, animated: true, completion: nil)
+        self.dismiss(animated: true)
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        shareVK()
+        self.dismiss(animated: true)
+    }
 }

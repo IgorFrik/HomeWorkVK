@@ -7,6 +7,5 @@ target 'HomeWorkVK' do
 
   # Pods for HomeWorkVK
   pod "VK-ios-sdk"
-  pod 'Alamofire'
 
 end

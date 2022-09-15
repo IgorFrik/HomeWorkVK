@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import VK_ios_sdk
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -46,7 +47,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
+    
+    func showApp() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        self.window?.rootViewController?.present(newVC, animated: true, completion: nil)
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+            if let url = URLContexts.first?.url {
+                // Handle URL
+                VKSdk.processOpen(url, fromApplication: nil)
+            }
+        }
 }
 

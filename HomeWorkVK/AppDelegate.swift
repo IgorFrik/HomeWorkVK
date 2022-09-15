@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        VKSdk.initialize(withAppId: "51417093")?.uiDelegate = self
+        VKSdk.initialize(withAppId: "51417093")?.uiDelegate = self
         return true
     }
 
@@ -33,23 +33,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-//extension AppDelegate: VKSdkDelegate, VKSdkUIDelegate {
-//
-//    func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
-//        print("vkSdkAccessAuthorizationFinished")
-//    }
-//
-//    func vkSdkUserAuthorizationFailed() {
-//        print("vkSdkUserAuthorizationFailed")
-//    }
-//
-//    func vkSdkShouldPresent(_ controller: UIViewController!) {
-//        print("vkSdkShouldPresent")
-//        let vc = UIApplication.shared.keyWindow?.rootViewController
-//        vc?.present(controller, animated: true, completion: nil)
-//    }
-//
-//    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {
-//        print("vkSdkShouldPresent")
-//    }
-//}
+extension AppDelegate: VKSdkUIDelegate {
+    func vkSdkShouldPresent(_ controller: UIViewController!) {
+        let vc = UIApplication.shared.keyWindow?.rootViewController
+        if vc?.presentedViewController != nil {
+            vc?.dismiss(animated: true, completion: {
+                print("hide current modal cotroller if presents")
+                vc?.present(controller, animated: true, completion: {
+                    print("SFSafariViewController opened to login through a browser1")
+                })
+            })
+        } else {
+            vc?.present(controller, animated: true, completion: {
+                print("SFSafariViewController opened to login through a browser2")
+            })
+        }
+    }
+    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {
+        print("vkSdkNeedCaptchaEnter")
+    }
+    
+}
